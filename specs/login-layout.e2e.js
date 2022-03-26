@@ -39,7 +39,9 @@ describe('HW-2 task #1', function () {
       await sideBarItem.moveTo();
       const styleInfo = await sideBarItem.getCSSProperty(cssProperty);
       if (styleInfo.value === color) {
-        throw new Error(`Color was changed to red`);
+        throw new Error(
+          `Color was changed to red for element: ${sideBarItem.selector} with index: ${sideBarItem.index}`
+        );
       }
     }
   });
